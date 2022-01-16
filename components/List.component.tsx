@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, FlatList, View, StyleSheet} from 'react-native';
 import {MovieI} from '../requests/get/movies.interface';
+import Card from './Card.component';
 
 interface ListProps {
   movies: MovieI[];
@@ -17,7 +18,7 @@ export default function List({movies, title}: ListProps) {
         <FlatList
           data={movies}
           horizontal={true}
-          renderItem={({item}) => <Text>{item.title}</Text>}
+          renderItem={({item}) => <Card movie={item} />}
         />
       </View>
     </View>
